@@ -1,7 +1,7 @@
 # odtp-zoo-db
 Zoo index for Open Digital Twin Platform
 
-ODTP accesses `index.yaml` from this repo to list all compatible components and metadata. 
+ODTP accesses `index.yaml`/`index.json` from this repo to list all compatible components and metadata. 
 
 ## How to submit a component.
 
@@ -14,7 +14,7 @@ In order to submit a component you need to make an entry in `components` directo
 3. Fill the data
 4. Place the file into `components` directory.
 5. Submit a pull request and wait for review. 
-    - Components pull requests target `components` branch, after merging it will get automatically deployed to `master`.
+    - Components pull requests target `components` branch, after merging it will get automatically deployed to `main`.
     - Do not edit `index.yaml` or `index.json` directly, and do not modify any other file. 
     - The added date will be automatically populated after the merge. 
 
