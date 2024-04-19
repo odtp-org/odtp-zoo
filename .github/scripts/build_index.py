@@ -102,6 +102,7 @@ if __name__ == "__main__":
     component_index_ext = update_index(components)
     component_index_master = update_master_index(component_index_ext)
     
+    
     # # validate
     # validate.validate_index(build_index_path)
     # validate.validate_index(deploy_index_path)
