@@ -36,7 +36,7 @@ def read_component(file: Path):
 def read_component_dir(components_dir):
     components = {}
     for f in components_dir.iterdir():
-        if f.is_file() and f.suffix.lower() == '.json':        
+        if f.is_file() and f.suffix.lower() == '.yaml':        
             component = read_component(f)
             components[component['url']] = component
     return components
