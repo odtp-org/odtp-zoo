@@ -37,6 +37,9 @@ jobs:
           with:
             python-version: '3.11'
 
+        - name: Install yaml
+          run: pip install pyyaml
+
         - name: Build index
           run: python -B components/.github/scripts/build_index.py --build-branch components --deploy-branch main
 

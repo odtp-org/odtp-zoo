@@ -1,7 +1,7 @@
 # odtp-zoo-db
 Zoo index for Open Digital Twin Platform
 
-ODTP accesses `index.yaml`/`index.json` from this repo to list all compatible components and metadata. 
+ODTP accesses `index.json` from this repo to list all compatible components and metadata. 
 
 ## How to submit a component.
 
