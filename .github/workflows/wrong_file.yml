@@ -6,14 +6,14 @@ name: Warning wrong file
       - main
       - components
     paths-ignore:
-      - 'extensions/**.yaml'
+      - 'components/**.yaml'
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
     paths-ignore:
-      - 'extensions/**.yaml'
+      - 'components/**.yaml'
 
 jobs:
   wrong-file:
