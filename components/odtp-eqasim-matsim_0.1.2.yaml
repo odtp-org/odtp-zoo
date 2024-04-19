@@ -1,0 +1,174 @@
+added: '2024-04-19'
+build-args: null
+component-author: Carlos Vivar Rios
+component-description: ODTP component for running Eqasim Matsim Pipeline.
+component-license: BSD-3-Clause
+component-name: odtp-eqasim-matsim
+component-repository: https://github.com/odtp-org/odtp-eqasim-matsim
+component-type: ephemeral
+component-version: 0.1.2
+data-inputs:
+- description: Original eqasim input.
+  name: data
+  path: data
+  type: Folder
+- description: Eqasim output.
+  name: eqasim-output
+  path: eqasim-output
+  type: Folder
+- description: Eqasim cache folder.
+  name: cache
+  path: cache
+  type: Folder
+data-output:
+- description: Output from matsim simulations
+  name: eqasim-matsim-output
+  path: eqasim-matsim-output
+  type: Folder
+devices:
+  gpu: false
+odpt.yaml: !!python/tuple
+- odtp-eqasim-matsim_0.1.2.yaml
+parameters:
+- allow-custom-value: false
+  datatype: string
+  default-value: CORSICA
+  description: Type of desired scenario where to run the simulation. It should match
+    the input data.
+  name: SCENARIO
+  options:
+  - CORSICA
+  - IDF
+  - CH
+- allow-custom-value: false
+  datatype: integer
+  default-value: 4
+  description: Number of processes to be used. Only compatible with SCENARIO equal
+    to CORSICA or IDF
+  name: processes
+  options: null
+  parameter-bounds:
+  - 0
+  - inf
+- allow-custom-value: false
+  datatype: string
+  default-value: entd
+  description: To be developed
+  name: hts
+  options:
+  - entd
+  - egt
+  parameter-bounds: null
+- allow-custom-value: false
+  datatype: float
+  default-value: 0.001
+  description: To be defined
+  name: sampling_rate
+  options: null
+  parameter-bounds:
+  - 0
+  - 1
+- allow-custom-value: false
+  datatype: integer
+  default-value: 1234
+  description: Random seed.
+  name: random_seed
+  options: null
+  parameter-bounds:
+  - 0
+  - inf
+- allow-custom-value: true
+  datatype: string
+  default-value: 8GB
+  description: Java memory to be used
+  name: java_memory
+  options:
+  - 8GB
+  - 16GB
+  - 24GB
+  - 48GB
+  - 100GB
+  parameter-bounds: null
+- allow-custom-value: false
+  datatype: integer
+  default-value: 4
+  description: Threads
+  name: threads
+  options: null
+  parameter-bounds:
+  - 0
+  - inf
+- allow-custom-value: false
+  datatype: integer
+  default-value: 2
+  description: To be defined
+  name: hot_deck_matching_runnners
+  options: null
+  parameter-bounds:
+  - 0
+  - inf
+- allow-custom-value: false
+  datatype: float
+  default-value: 0.01
+  description: To be defined
+  name: input_downsampling
+  options: null
+  parameter-bounds:
+  - 0
+  - 1
+- allow-custom-value: false
+  datatype: bool
+  default-value: true
+  description: To be defined
+  name: enable_scaling
+  options: null
+  parameter-bounds: null
+- allow-custom-value: false
+  datatype: integer
+  default-value: 2020
+  description: To be defined
+  name: scaling_year
+  options: null
+  parameter-bounds:
+  - 2000
+  - inf
+- allow-custom-value: false
+  datatype: bool
+  default-value: true
+  description: To be defined
+  name: use_freight
+  options: null
+  parameter-bounds: null
+- allow-custom-value: false
+  datatype: date
+  default-value: 01.10.2018
+  description: To be defined
+  name: hafas_date
+  options: null
+  parameter-bounds: null
+- allow-custom-value: false
+  datatype: string
+  default-value: ch
+  description: To be defined
+  name: output_id
+  options: null
+  parameter-bounds: null
+ports: null
+schema-input: null
+schema-output: null
+secrets: null
+tags:
+- mobility
+- matsim
+- simulation
+tools:
+- tool-author: "H\xF6rl, S. and M. Balac"
+  tool-license: GPL-2.0 License
+  tool-name: eqasim-org/ile-de-france
+  tool-repository: https://github.com/eqasim-org/ile-de-france
+  tool-version: fb1112d2a7d1817746be84413da584c391059ad1
+- tool-author: "H\xF6rl, S. and M. Balac"
+  tool-license: GPL-2.0 License
+  tool-name: ivt-vpl/populations/ch-zh-synpop
+  tool-repository: https://gitlab.ethz.ch/ivt-vpl/populations/ch-zh-synpop
+  tool-version: 4658daa2e441dcda132622e7fcb47da1df8c47d6
