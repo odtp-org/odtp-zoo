@@ -3,7 +3,7 @@ name: Warning wrong file
 "on":
   push:
     branches-ignore:
-      - master
+      - main
       - components
     paths-ignore:
       - 'extensions/**.yaml'
