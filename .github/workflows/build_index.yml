@@ -65,6 +65,12 @@ jobs:
         - name: copy yaml
           run: cp -r components/components/*.yaml main/components/
 
+        - name: copy yaml
+          run: cp -r components/components/*.yaml gh-page/components/
+
+        - name: copy yaml
+          run: cp -r main/index.json gh-page/index.json
+
         - name: Commit - main
           uses: stefanzweifel/git-auto-commit-action@v5
           with:
