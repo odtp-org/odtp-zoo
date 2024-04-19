@@ -1,5 +1,5 @@
 # This file should contain basic component information for your component.
-component-name: odtp-eqasim-matsim
+component-name: odtp-eqasim
 component-author: Carlos Vivar Rios
 component-version: 0.4.2
 component-repository: https://github.com/odtp-org/odtp-eqasim
