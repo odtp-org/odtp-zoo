@@ -14,6 +14,111 @@
                 "dataloader",
                 "download"
             ]
+        },
+        {
+            "component-name": "odtp-eqasim-dataloader",
+            "component-author": "Carlos Vivar Rios",
+            "component-version": "0.3.1",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
+            "component-license": "AGPL-3.0" ,
+            "component-type": "ephemeral",
+            "component-description": "Tool to download and uncompress a data folder",
+            "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
+            "added_date": "2024-04-19",
+            "tags": [
+                "dataloader",
+                "download"
+            ]
+        },
+        {
+            "component-name": "odtp-eqasim-dataloader",
+            "component-author": "Carlos Vivar Rios",
+            "component-version": "0.3.1",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
+            "component-license": "AGPL-3.0" ,
+            "component-type": "ephemeral",
+            "component-description": "Tool to download and uncompress a data folder",
+            "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
+            "added_date": "2024-04-19",
+            "tags": [
+                "dataloader",
+                "download"
+            ]
+        },
+        {
+            "component-name": "odtp-eqasim-dataloader",
+            "component-author": "Carlos Vivar Rios",
+            "component-version": "0.3.1",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
+            "component-license": "AGPL-3.0" ,
+            "component-type": "ephemeral",
+            "component-description": "Tool to download and uncompress a data folder",
+            "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
+            "added_date": "2024-04-19",
+            "tags": [
+                "dataloader",
+                "download"
+            ]
+        },
+        {
+            "component-name": "odtp-eqasim-dataloader",
+            "component-author": "Carlos Vivar Rios",
+            "component-version": "0.3.1",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
+            "component-license": "AGPL-3.0" ,
+            "component-type": "ephemeral",
+            "component-description": "Tool to download and uncompress a data folder",
+            "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
+            "added_date": "2024-04-19",
+            "tags": [
+                "dataloader",
+                "download"
+            ]
+        },
+        {
+            "component-name": "odtp-eqasim-dataloader",
+            "component-author": "Carlos Vivar Rios",
+            "component-version": "0.3.1",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
+            "component-license": "AGPL-3.0" ,
+            "component-type": "ephemeral",
+            "component-description": "Tool to download and uncompress a data folder",
+            "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
+            "added_date": "2024-04-19",
+            "tags": [
+                "dataloader",
+                "download"
+            ]
+        },
+        {
+            "component-name": "odtp-eqasim-dataloader",
+            "component-author": "Carlos Vivar Rios",
+            "component-version": "0.3.1",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
+            "component-license": "AGPL-3.0" ,
+            "component-type": "ephemeral",
+            "component-description": "Tool to download and uncompress a data folder",
+            "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
+            "added_date": "2024-04-19",
+            "tags": [
+                "dataloader",
+                "download"
+            ]
+        },
+        {
+            "component-name": "odtp-eqasim-dataloader",
+            "component-author": "Carlos Vivar Rios",
+            "component-version": "0.3.1",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
+            "component-license": "AGPL-3.0" ,
+            "component-type": "ephemeral",
+            "component-description": "Tool to download and uncompress a data folder",
+            "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
+            "added_date": "2024-04-19",
+            "tags": [
+                "dataloader",
+                "download"
+            ]
         }
     ]
 }

@@ -77,6 +77,24 @@
             background-color: #ddd; /* Sets the background color of the grid to grey */
         }
 
+        @media screen and (max-width: 1200px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
         .card {
             position: relative;
             border: 1px solid #ddd;
@@ -86,6 +104,7 @@
             box-sizing: border-box;
             background-color: #fff; /* Sets the background color of the cards to white */
         }
+
         .badge {
             display: inline-block;
             padding: 5px 10px;
@@ -324,7 +343,7 @@
 <!-- Add this just before the closing body tag -->
 
 </body>
-<footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+<footer style="background-color: #000; color: #fff; padding: 20px; text-align: center;">
     <p>Open Digital Twin Platform | SDSC | CSFM</p>
     <!-- <p><a href="#" style="color: #fff; text-decoration: none;">Terms of Service</a> | <a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></p> -->
 </footer>
