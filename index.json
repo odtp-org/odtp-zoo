@@ -9,6 +9,7 @@
             "component-type": "ephemeral",
             "component-description": "Tool to download and uncompress a data folder",
             "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
+            "added_date": "2024-04-19",
             "tags": [
                 "dataloader",
                 "download"
