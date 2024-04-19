@@ -37,7 +37,7 @@ jobs:
           with:
             python-version: '3.11'
 
-      - name: Install yaml
+        - name: Install yaml
           run: pip install pyyaml
 
         - name: Build index
