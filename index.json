@@ -1,5 +1,491 @@
 {
     "components": [
-        
+        {
+            "component-name": "odtp-eqasim-matsim",
+            "component-author": "Carlos Vivar Rios",
+            "component-version": "0.1.2",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-matsim",
+            "component-license": "BSD-3-Clause",
+            "component-type": "ephemeral",
+            "component-description": "ODTP component for running Eqasim Matsim Pipeline.",
+            "tags": [
+                "mobility",
+                "matsim",
+                "simulation"
+            ],
+            "tools": [
+                {
+                    "tool-name": "eqasim-org/ile-de-france",
+                    "tool-author": "Hörl, S. and M. Balac",
+                    "tool-version": "fb1112d2a7d1817746be84413da584c391059ad1",
+                    "tool-repository": "https://github.com/eqasim-org/ile-de-france",
+                    "tool-license": "GPL-2.0 License"
+                },
+                {
+                    "tool-name": "ivt-vpl/populations/ch-zh-synpop",
+                    "tool-author": "Hörl, S. and M. Balac",
+                    "tool-version": "4658daa2e441dcda132622e7fcb47da1df8c47d6",
+                    "tool-repository": "https://gitlab.ethz.ch/ivt-vpl/populations/ch-zh-synpop",
+                    "tool-license": "GPL-2.0 License"
+                }
+            ],
+            "secrets": null,
+            "build-args": null,
+            "ports": null,
+            "parameters": [
+                {
+                    "name": "SCENARIO",
+                    "default-value": "CORSICA",
+                    "datatype": "string",
+                    "description": "Type of desired scenario where to run the simulation. It should match the input data.",
+                    "options": [
+                        "CORSICA",
+                        "IDF",
+                        "CH"
+                    ],
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "processes",
+                    "default-value": 4,
+                    "datatype": "integer",
+                    "description": "Number of processes to be used. Only compatible with SCENARIO equal to CORSICA or IDF",
+                    "parameter-bounds": [
+                        0,
+                        "inf"
+                    ],
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "hts",
+                    "default-value": "entd",
+                    "datatype": "string",
+                    "description": "To be developed",
+                    "parameter-bounds": null,
+                    "options": [
+                        "entd",
+                        "egt"
+                    ],
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "sampling_rate",
+                    "default-value": 0.001,
+                    "datatype": "float",
+                    "description": "To be defined",
+                    "parameter-bounds": [
+                        0,
+                        1
+                    ],
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "random_seed",
+                    "default-value": 1234,
+                    "datatype": "integer",
+                    "description": "Random seed.",
+                    "parameter-bounds": [
+                        0,
+                        "inf"
+                    ],
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "java_memory",
+                    "default-value": "8GB",
+                    "datatype": "string",
+                    "description": "Java memory to be used",
+                    "parameter-bounds": null,
+                    "options": [
+                        "8GB",
+                        "16GB",
+                        "24GB",
+                        "48GB",
+                        "100GB"
+                    ],
+                    "allow-custom-value": true
+                },
+                {
+                    "name": "threads",
+                    "default-value": 4,
+                    "datatype": "integer",
+                    "description": "Threads",
+                    "parameter-bounds": [
+                        0,
+                        "inf"
+                    ],
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "hot_deck_matching_runnners",
+                    "default-value": 2,
+                    "datatype": "integer",
+                    "description": "To be defined",
+                    "parameter-bounds": [
+                        0,
+                        "inf"
+                    ],
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "input_downsampling",
+                    "default-value": 0.01,
+                    "datatype": "float",
+                    "description": "To be defined",
+                    "parameter-bounds": [
+                        0,
+                        1
+                    ],
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "enable_scaling",
+                    "default-value": true,
+                    "datatype": "bool",
+                    "description": "To be defined",
+                    "parameter-bounds": null,
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "scaling_year",
+                    "default-value": 2020,
+                    "datatype": "integer",
+                    "description": "To be defined",
+                    "parameter-bounds": [
+                        2000,
+                        "inf"
+                    ],
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "use_freight",
+                    "default-value": true,
+                    "datatype": "bool",
+                    "description": "To be defined",
+                    "parameter-bounds": null,
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "hafas_date",
+                    "default-value": "01.10.2018",
+                    "datatype": "date",
+                    "description": "To be defined",
+                    "parameter-bounds": null,
+                    "options": null,
+                    "allow-custom-value": false
+                },
+                {
+                    "name": "output_id",
+                    "default-value": "ch",
+                    "datatype": "string",
+                    "description": "To be defined",
+                    "parameter-bounds": null,
+                    "options": null,
+                    "allow-custom-value": false
+                }
+            ],
+            "data-inputs": [
+                {
+                    "name": "data",
+                    "type": "Folder",
+                    "path": "data",
+                    "description": "Original eqasim input."
+                },
+                {
+                    "name": "eqasim-output",
+                    "type": "Folder",
+                    "path": "eqasim-output",
+                    "description": "Eqasim output."
+                },
+                {
+                    "name": "cache",
+                    "type": "Folder",
+                    "path": "cache",
+                    "description": "Eqasim cache folder."
+                }
+            ],
+            "data-output": [
+                {
+                    "name": "eqasim-matsim-output",
+                    "type": "Folder",
+                    "path": "eqasim-matsim-output",
+                    "description": "Output from matsim simulations"
+                }
+            ],
+            "schema-input": null,
+            "schema-output": null,
+            "devices": {
+                "gpu": false
+            },
+            "added": "2024-04-19",
+            "odpt.yaml": "odtp-eqasim-matsim_0.1.2.yaml"
+        },
+        {
+            "added": "2024-04-19",
+            "build-args": null,
+            "component-author": "Carlos Vivar Rios",
+            "component-description": "Tool to download and uncompress a data folder",
+            "component-license": "AGPL-3.0",
+            "component-name": "odtp-eqasim-dataloader",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
+            "component-type": "ephemeral",
+            "component-version": "0.3.1",
+            "data-inputs": null,
+            "data-output": [
+                {
+                    "description": "Input data for eqasim",
+                    "name": "data",
+                    "path": "data",
+                    "type": "Folder"
+                }
+            ],
+            "devices": {
+                "gpu": false
+            },
+            "parameters": [
+                {
+                    "allow-custom-value": true,
+                    "datatype": "string",
+                    "default-value": null,
+                    "description": "URL to the switch folder to download",
+                    "name": "LINK",
+                    "options": null
+                }
+            ],
+            "ports": null,
+            "schema-input": null,
+            "schema-output": null,
+            "secrets": null,
+            "tags": [
+                "dataloader",
+                "download"
+            ],
+            "tools": null
+        },
+        {
+            "added": "2024-04-19",
+            "build-args": null,
+            "component-author": "Carlos Vivar Rios",
+            "component-description": "ODTP component for running Eqasim Matsim Pipeline.",
+            "component-license": "AGPL-3.0",
+            "component-name": "odtp-eqasim-matsim",
+            "component-repository": "https://github.com/odtp-org/odtp-eqasim",
+            "component-type": "ephemeral",
+            "component-version": "0.4.2",
+            "data-inputs": [
+                {
+                    "description": "Original eqasim input.",
+                    "name": "data",
+                    "path": "data",
+                    "type": "Folder"
+                }
+            ],
+            "data-output": [
+                {
+                    "description": "Output from matsim simulations",
+                    "name": "eqasim-output",
+                    "path": "eqasim-output",
+                    "type": "Folder"
+                }
+            ],
+            "devices": {
+                "gpu": false
+            },
+            "parameters": [
+                {
+                    "allow-custom-value": false,
+                    "datatype": "string",
+                    "default-value": "CORSICA",
+                    "description": "Type of desired scenario where to run the simulation. It should match the input data.",
+                    "name": "SCENARIO",
+                    "options": [
+                        "CORSICA",
+                        "IDF",
+                        "CH"
+                    ]
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "integer",
+                    "default-value": 4,
+                    "description": "Number of processes to be used. Only compatible with SCENARIO equal to CORSICA or IDF",
+                    "name": "processes",
+                    "options": null,
+                    "parameter-bounds": [
+                        0,
+                        "inf"
+                    ]
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "string",
+                    "default-value": "entd",
+                    "description": "To be developed",
+                    "name": "hts",
+                    "options": [
+                        "entd",
+                        "egt"
+                    ],
+                    "parameter-bounds": null
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "float",
+                    "default-value": 0.001,
+                    "description": "To be defined",
+                    "name": "sampling_rate",
+                    "options": null,
+                    "parameter-bounds": [
+                        0,
+                        1
+                    ]
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "integer",
+                    "default-value": 1234,
+                    "description": "Random seed.",
+                    "name": "random_seed",
+                    "options": null,
+                    "parameter-bounds": [
+                        0,
+                        "inf"
+                    ]
+                },
+                {
+                    "allow-custom-value": true,
+                    "datatype": "string",
+                    "default-value": "8GB",
+                    "description": "Java memory to be used",
+                    "name": "java_memory",
+                    "options": [
+                        "8GB",
+                        "16GB",
+                        "24GB",
+                        "48GB",
+                        "100GB"
+                    ],
+                    "parameter-bounds": null
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "integer",
+                    "default-value": 4,
+                    "description": "Threads",
+                    "name": "threads",
+                    "options": null,
+                    "parameter-bounds": [
+                        0,
+                        "inf"
+                    ]
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "integer",
+                    "default-value": 2,
+                    "description": "To be defined",
+                    "name": "hot_deck_matching_runnners",
+                    "options": null,
+                    "parameter-bounds": [
+                        0,
+                        "inf"
+                    ]
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "float",
+                    "default-value": 0.01,
+                    "description": "To be defined",
+                    "name": "input_downsampling",
+                    "options": null,
+                    "parameter-bounds": [
+                        0,
+                        1
+                    ]
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "bool",
+                    "default-value": true,
+                    "description": "To be defined",
+                    "name": "enable_scaling",
+                    "options": null,
+                    "parameter-bounds": null
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "integer",
+                    "default-value": 2020,
+                    "description": "To be defined",
+                    "name": "scaling_year",
+                    "options": null,
+                    "parameter-bounds": [
+                        2000,
+                        "inf"
+                    ]
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "bool",
+                    "default-value": true,
+                    "description": "To be defined",
+                    "name": "use_freight",
+                    "options": null,
+                    "parameter-bounds": null
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "date",
+                    "default-value": "01.10.2018",
+                    "description": "To be defined",
+                    "name": "hafas_date",
+                    "options": null,
+                    "parameter-bounds": null
+                },
+                {
+                    "allow-custom-value": false,
+                    "datatype": "string",
+                    "default-value": "ch",
+                    "description": "To be defined",
+                    "name": "output_id",
+                    "options": null,
+                    "parameter-bounds": null
+                }
+            ],
+            "ports": null,
+            "schema-input": null,
+            "schema-output": null,
+            "secrets": null,
+            "tags": [
+                "mobility",
+                "eqasim",
+                "simulation"
+            ],
+            "tools": [
+                {
+                    "tool-author": "Hörl, S. and M. Balac",
+                    "tool-license": "GPL-2.0 License",
+                    "tool-name": "eqasim-org/ile-de-france",
+                    "tool-repository": "https://github.com/eqasim-org/ile-de-france",
+                    "tool-version": "fb1112d2a7d1817746be84413da584c391059ad1"
+                },
+                {
+                    "tool-author": "Hörl, S. and M. Balac",
+                    "tool-license": "GPL-2.0 License",
+                    "tool-name": "ivt-vpl/populations/ch-zh-synpop",
+                    "tool-repository": "https://gitlab.ethz.ch/ivt-vpl/populations/ch-zh-synpop",
+                    "tool-version": "4658daa2e441dcda132622e7fcb47da1df8c47d6"
+                }
+            ]
+        }
     ]
 }
