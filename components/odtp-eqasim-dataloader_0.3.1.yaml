@@ -1,0 +1,54 @@
+# This file should contain basic component information for your component.
+component-name: odtp-eqasim-dataloader
+component-author: Carlos Vivar Rios
+component-version: 0.3.1
+component-repository: https://github.com/odtp-org/odtp-eqasim-dataloader
+component-license: AGPL-3.0
+component-type: ephemeral
+component-description: Tool to download and uncompress a data folder
+tags:
+  - dataloader
+  - download
+
+# Information about the tools
+tools: null
+
+# If your tool require some secrets token to be passed as ENV to the component
+# This won't be traced in MongoDB
+secrets: null
+
+# If the tool requires some building arguments such as Matlab license
+build-args: null
+
+# If applicable, ports exposed by the component
+# Include Name, Description, and Port Value for each port
+ports: null
+
+# If applicable, parameters exposed by the component
+# Datatype can be str, int, float, or bool.
+parameters: 
+  - name: LINK
+    default-value: null
+    datatype: string
+    description: URL to the switch folder to download
+    options: null
+    allow-custom-value: true
+
+# If applicable, data-input list required by the component
+data-inputs: null
+
+# If applicable, data-output list produced by the component
+data-output:
+  - name: data
+    type: Folder
+    path: data  
+    description: Input data for eqasim
+
+# If applicable, path to schemas to perform semantic validation.
+# Still under development. Ignore.
+schema-input: null
+schema-output: null
+
+# If applicable, define devices needed such as GPU.
+devices:
+  gpu: false
