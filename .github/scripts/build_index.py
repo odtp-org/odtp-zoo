@@ -38,7 +38,7 @@ def read_component_dir(components_dir):
     for f in components_dir.iterdir():
         if f.is_file() and f.suffix.lower() == '.yaml':        
             component = read_component(f)
-            components[component['url']] = component
+            components[component['component-repository']] = component
     return components
 
 

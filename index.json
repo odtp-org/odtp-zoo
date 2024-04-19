@@ -5,7 +5,7 @@
             "component-author": "Carlos Vivar Rios",
             "component-version": "0.3.1",
             "component-repository": "https://github.com/odtp-org/odtp-eqasim-dataloader",
-            "component-license": "AGPL-3.0" ,
+            "component-license": "AGPL-3.0",
             "component-type": "ephemeral",
             "component-description": "Tool to download and uncompress a data folder",
             "odpt.yaml": "odtp-eqasim-dataloader_0.3.1.yaml",
@@ -13,7 +13,36 @@
             "tags": [
                 "dataloader",
                 "download"
-            ]
+            ],
+            "tools": null,
+            "secrets": null,
+            "build-args": null,
+            "ports": null,
+            "parameters": [
+                {
+                    "name": "LINK",
+                    "default-value": null,
+                    "datatype": "string",
+                    "description": "URL to the switch folder to download",
+                    "options": null,
+                    "allow-custom-value": true
+                }
+            ],
+            "data-inputs": null,
+            "data-output": [
+                {
+                    "name": "data",
+                    "type": "Folder",
+                    "path": "data",
+                    "description": "Input data for eqasim"
+                }
+            ],
+            "schema-input": null,
+            "schema-output": null,
+            "devices": {
+                "gpu": false
+            },
+            "added": "2024-04-19"
         }
     ]
 }
