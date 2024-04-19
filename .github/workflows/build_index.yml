@@ -52,7 +52,7 @@ jobs:
           run: echo "msg=$(git -C main log -1 --pretty=%s)" >> $GITHUB_OUTPUT
 
         - name: copy yaml
-          run: cp -r components/component/*.yaml main/components/
+          run: cp -r components/components/*.yaml main/components/
 
         - name: Commit - main
           uses: stefanzweifel/git-auto-commit-action@v5
