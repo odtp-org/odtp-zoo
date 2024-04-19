@@ -28,7 +28,7 @@ def read_component(file: Path):
     except:
         # add "added": "YYYY-MM-DD"
         component["added"] = str(datetime.datetime.now().date())
-        component["odpt.yaml"] = f"{component['component-name']}_{component['component-version']}.yaml",
+        component["odpt.yaml"] = f"{component['component-name']}_{component['component-version']}.yaml"
         # with open(file, 'w', encoding='utf-8') as f:
         #     yaml.dump(component, f, default_flow_style=False)
 

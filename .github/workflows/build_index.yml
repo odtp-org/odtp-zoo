@@ -32,6 +32,13 @@ jobs:
             ref: 'main'
             path: main
 
+        - name: Checkout gh-page
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 2
+            ref: 'gh-pages'
+            path: gh-pages
+
         - name: Setup python
           uses: actions/setup-python@v5
           with:
@@ -51,6 +58,10 @@ jobs:
           id: last-commit-message-main
           run: echo "msg=$(git -C main log -1 --pretty=%s)" >> $GITHUB_OUTPUT
 
+        - name: Get last commit message - gh-page
+          id: last-commit-message-gh-page
+          run: echo "msg=$(git -C gh-page log -1 --pretty=%s)" >> $GITHUB_OUTPUT
+
         - name: copy yaml
           run: cp -r components/components/*.yaml main/components/
 
@@ -63,6 +74,16 @@ jobs:
             push_options: '--force'
             skip_fetch: true
             repository: main
+
+        - name: Commit - gh-page
+          uses: stefanzweifel/git-auto-commit-action@v5
+          with:
+            commit_message: ${{ steps.last-commit-message-gh-page.outputs.msg }}
+            commit_options: '--amend --no-edit'
+            file_pattern: '*.json components/*.yaml'
+            push_options: '--force'
+            skip_fetch: true
+            repository: gh-page
 
         - name: Commit - components
           uses: stefanzweifel/git-auto-commit-action@v5
