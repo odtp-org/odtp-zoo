@@ -2,6 +2,7 @@
 component-name: odtp-eqasim
 component-author: Carlos Vivar Rios
 component-version: 0.4.2
+component-commit: 0f868da0327110620959c401bc25ebbffd07a7ab
 component-repository: https://github.com/odtp-org/odtp-eqasim
 component-license: AGPL-3.0
 component-type: ephemeral

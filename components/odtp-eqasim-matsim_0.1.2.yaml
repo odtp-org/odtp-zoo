@@ -2,6 +2,7 @@
 component-name: odtp-eqasim-matsim
 component-author: Carlos Vivar Rios
 component-version: 0.1.2
+component-commit: 28902c1cea27d5ca503b2af17207e708f0dd407b
 component-repository: https://github.com/odtp-org/odtp-eqasim-matsim
 component-license: BSD-3-Clause
 component-type: ephemeral
